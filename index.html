@@ -108,6 +108,53 @@
             line-height: 1.6;
         }
 
+        .cat-gifs {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .cat-gif-item {
+            opacity: 0;
+            animation: slideIn 0.6s forwards;
+        }
+
+        .cat-gif-item:nth-child(1) {
+            animation-delay: 1.5s;
+        }
+
+        .cat-gif-item:nth-child(2) {
+            animation-delay: 3.5s;
+        }
+
+        .cat-gif-item img {
+            width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cat-gif-item p {
+            font-size: 1.1em;
+            color: #ff1744;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -155,6 +202,17 @@
             <p>You made the right choice! 😊</p>
             <p style="margin-top: 20px; font-size: 1.5em; color: #ff1744;">I love you so much! ❤️</p>
             <div class="heart" style="margin-top: 20px;">💑</div>
+            
+            <div class="cat-gifs">
+                <div class="cat-gif-item">
+                    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Smirking cat">
+                    <p>I hope you didn't try to chase the "No"... 😏</p>
+                </div>
+                <div class="cat-gif-item">
+                    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDZtYXZzbnFudnFkZHJmanljaXFtdnMxNDZtb201NzhjYnJscDY1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2g6sCTsSoVuSfSxK4W/giphy.gif" alt="Laughing cat">
+                    <p>"No" was NEVER an option! 😂</p>
+                </div>
+            </div>
         </div>
     </div>
 
