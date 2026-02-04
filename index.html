@@ -28,7 +28,29 @@
             border-radius: 30px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             max-width: 500px;
+            max-height: 90vh;
             position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background: #ff6b9d;
+            border-radius: 10px;
+        }
+
+        .container::-webkit-scrollbar-thumb:hover {
+            background: #ff1744;
         }
 
         h1 {
@@ -129,8 +151,10 @@
         }
 
         .cat-gif-item img {
-            width: 250px;
-            height: 250px;
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            aspect-ratio: 1;
             border-radius: 15px;
             margin-bottom: 10px;
             object-fit: cover;
@@ -142,6 +166,7 @@
             color: #ff1744;
             font-weight: bold;
             margin: 10px 0;
+            padding: 0 20px;
         }
 
         @keyframes slideIn {
@@ -279,6 +304,14 @@
             question.style.display = 'none';
             celebration.style.display = 'block';
             createConfetti();
+            
+            // Smooth scroll to top of container
+            setTimeout(() => {
+                document.querySelector('.container').scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 100);
         });
 
         // Confetti animation
